@@ -1,0 +1,31 @@
+<div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button>🔍</button>
+</div>
+
+<style>
+    .search-bar {
+        display: flex;
+        border: 2px solid #ddd;
+        border-radius: 30px;
+        overflow: hidden;
+        width: 40px;
+        transition: 0.4s;
+    }
+
+    .search-bar input {
+        width: 0;
+        border: none;
+        padding: 10px;
+        outline: none;
+        transition: 0.4s;
+    }
+
+    .search-bar:hover {
+        width: 200px;
+    }
+
+    .search-bar:hover input {
+        width: 100%;
+    }
+</style>

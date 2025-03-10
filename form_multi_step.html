@@ -1,0 +1,91 @@
+<div class="multi-step-form">
+    <div class="step active">Step 1</div>
+    <div class="step">Step 2</div>
+    <div class="step">Step 3</div>
+</div>
+
+<form id="form">
+    <div class="form-step active">
+        <label>Name:</label>
+        <input type="text">
+        <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <div class="form-step">
+        <label>Email:</label>
+        <input type="email">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <div class="form-step">
+        <label>Password:</label>
+        <input type="password">
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<script>
+    let stepIndex = 0;
+    const steps = document.querySelectorAll(".form-step");
+    const indicators = document.querySelectorAll(".step");
+
+    function showStep(index) {
+        steps.forEach((step, i) => {
+            step.classList.toggle("active", i === index);
+            indicators[i].classList.toggle("active", i === index);
+        });
+    }
+
+    function nextStep() {
+        if (stepIndex < steps.length - 1) stepIndex++;
+        showStep(stepIndex);
+    }
+
+    function prevStep() {
+        if (stepIndex > 0) stepIndex--;
+        showStep(stepIndex);
+    }
+</script>
+
+<style>
+    .multi-step-form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .step {
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background: #ddd;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .step.active {
+        background: #4caf50;
+        color: white;
+    }
+
+    .form-step {
+        display: none;
+    }
+
+    .form-step.active {
+        display: block;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 8px 15px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>

@@ -1,0 +1,83 @@
+<input type="text" id="search" placeholder="Search...">
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">Name ⬍</th>
+            <th onclick="sortTable(1)">Age ⬍</th>
+            <th onclick="sortTable(2)">Country ⬍</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John</td>
+            <td>28</td>
+            <td>USA</td>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>24</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>30</td>
+            <td>Canada</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    document.getElementById("search").addEventListener("input", function () {
+        let filter = this.value.toUpperCase();
+        let rows = document.querySelectorAll("#dataTable tbody tr");
+
+        rows.forEach(row => {
+            row.style.display = row.textContent.toUpperCase().includes(filter) ? "" : "none";
+        });
+    });
+
+    function sortTable(n) {
+        let table = document.getElementById("dataTable");
+        let rows = Array.from(table.rows).slice(1);
+        let asc = table.getAttribute("data-sort") === "asc";
+
+        rows.sort((rowA, rowB) => {
+            let cellA = rowA.cells[n].textContent;
+            let cellB = rowB.cells[n].textContent;
+            return asc ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+        });
+
+        table.setAttribute("data-sort", asc ? "desc" : "asc");
+        rows.forEach(row => table.appendChild(row));
+    }
+</script>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background: #f4f4f4;
+        cursor: pointer;
+    }
+
+    th:hover {
+        background: #ddd;
+    }
+
+    input {
+        padding: 8px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+</style>

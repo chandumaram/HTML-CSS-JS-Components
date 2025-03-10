@@ -1,0 +1,59 @@
+<div class="dropdown">
+    <button class="dropdown-btn">Select an Option ▼</button>
+    <div class="dropdown-content">
+        <a href="#">Option 1</a>
+        <a href="#">Option 2</a>
+        <a href="#">Option 3</a>
+    </div>
+</div>
+
+<script>
+    document.querySelector(".dropdown-btn").addEventListener("click", function () {
+        document.querySelector(".dropdown-content").classList.toggle("show");
+    });
+
+    window.onclick = function (e) {
+        if (!e.target.matches('.dropdown-btn')) {
+            document.querySelector(".dropdown-content").classList.remove("show");
+        }
+    };
+</script>
+
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-btn {
+        background: #3498db;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 150px;
+        transition: 0.3s;
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+        background: #ddd;
+    }
+</style>

@@ -1,0 +1,29 @@
+<div class="accordion">
+    <div class="accordion-item">
+        <input type="checkbox" id="faq1">
+        <label for="faq1">What is this?</label>
+        <div class="content">This is an FAQ accordion!</div>
+    </div>
+</div>
+
+<style>
+    .accordion-item {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .accordion-item label {
+        display: block;
+        padding: 10px;
+        cursor: pointer;
+        background: #f7f7f7;
+    }
+
+    .content {
+        display: none;
+        padding: 10px;
+    }
+
+    input:checked+label+.content {
+        display: block;
+    }
+</style>

@@ -1,0 +1,46 @@
+<div class="pricing-table">
+    <div class="plan">
+        <h3>Basic</h3>
+        <p>$10/month</p>
+        <button>Select</button>
+    </div>
+    <div class="plan">
+        <h3>Pro</h3>
+        <p>$30/month</p>
+        <button>Select</button>
+    </div>
+    <div class="plan">
+        <h3>Enterprise</h3>
+        <p>$50/month</p>
+        <button>Select</button>
+    </div>
+</div>
+
+<style>
+    .pricing-table {
+        display: flex;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .plan {
+        background: #f7f7f7;
+        padding: 20px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .plan:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+        background: #ff9800;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+</style>

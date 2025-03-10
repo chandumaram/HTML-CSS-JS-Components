@@ -1,0 +1,22 @@
+<div class="glass-card">
+    <h3>Glass Effect</h3>
+    <p>Hover to see the effect!</p>
+</div>
+
+<style>
+    .glass-card {
+        width: 250px;
+        padding: 20px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .glass-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+</style>

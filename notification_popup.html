@@ -1,0 +1,28 @@
+<button onclick="showNotification()">Show Notification</button>
+<div class="notification">✅ Success! Your action was completed.</div>
+
+<script>
+    function showNotification() {
+        const notification = document.querySelector(".notification");
+        notification.classList.add("show");
+        setTimeout(() => notification.classList.remove("show"), 3000);
+    }
+</script>
+
+<style>
+    .notification {
+        position: fixed;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: green;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .notification.show {
+        bottom: 20px;
+    }
+</style>

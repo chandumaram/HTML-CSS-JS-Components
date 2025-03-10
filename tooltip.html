@@ -1,0 +1,22 @@
+<button class="tooltip-btn">Hover Me</button>
+<div class="tooltip">This is a tooltip message!</div>
+
+<style>
+    .tooltip {
+        position: absolute;
+        background: #222;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .tooltip-btn:hover+.tooltip {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+</style>

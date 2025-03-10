@@ -1,0 +1,60 @@
+<div class="fab-container">
+    <button class="fab">+</button>
+    <div class="fab-menu">
+        <button>📩</button>
+        <button>📞</button>
+        <button>💬</button>
+    </div>
+</div>
+
+<script>
+    document.querySelector(".fab").addEventListener("click", function () {
+        document.querySelector(".fab-menu").classList.toggle("open");
+    });
+</script>
+
+<style>
+    .fab-container {
+        position: fixed;
+    }
+
+    .fab {
+        width: 50px;
+        height: 50px;
+        background: #ff5722;
+        color: white;
+        font-size: 24px;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .fab-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+
+    .fab-menu.open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .fab-menu button {
+        width: 40px;
+        height: 40px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>

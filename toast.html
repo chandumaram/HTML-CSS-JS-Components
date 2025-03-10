@@ -1,0 +1,29 @@
+<button onclick="showToast()">Show Notification</button>
+
+<div class="toast">✔️ Success! Your action was completed.</div>
+
+<style>
+    .toast {
+        position: fixed;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .toast.show {
+        bottom: 20px;
+    }
+</style>
+
+<script>
+    function showToast() {
+        const toast = document.querySelector(".toast");
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 3000);
+    }
+</script>

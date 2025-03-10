@@ -1,0 +1,31 @@
+<div class="testimonial">
+    <p>"This is an amazing service!"</p>
+    <h4>- John Doe</h4>
+</div>
+
+<script>
+    const testimonials = [
+        '"This is an amazing service!" - John Doe',
+        '"I love using this product!" - Jane Smith',
+        '"Highly recommend to everyone!" - Alice Brown',
+    ];
+
+    let i = 0;
+    function changeTestimonial() {
+        document.querySelector(".testimonial p").innerText = testimonials[i].split(" - ")[0];
+        document.querySelector(".testimonial h4").innerText = `- ${testimonials[i].split(" - ")[1]}`;
+        i = (i + 1) % testimonials.length;
+    }
+
+    setInterval(changeTestimonial, 3000);
+</script>
+
+<style>
+    .testimonial {
+        width: 300px;
+        text-align: center;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+    }
+</style>

@@ -1,0 +1,47 @@
+<button onclick="toggleSidebar()">☰ Open Sidebar</button>
+<div class="sidebar" id="sidebar">
+    <a href="#">Dashboard</a>
+    <a href="#">Analytics</a>
+    <a href="#">Settings</a>
+    <button onclick="toggleSidebar()">Close</button>
+</div>
+
+<script>
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+    }
+</script>
+
+<style>
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: #222;
+        color: white;
+        padding: 20px;
+        transition: 0.3s;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .sidebar a,
+    .sidebar button {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        border: none;
+        background: none;
+        text-align: left;
+    }
+
+    .sidebar a:hover,
+    .sidebar button:hover {
+        background: #444;
+    }
+</style>

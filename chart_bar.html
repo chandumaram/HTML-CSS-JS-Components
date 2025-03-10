@@ -1,0 +1,27 @@
+<div class="bar-chart">
+    <div class="bar" style="height: 80%;">80%</div>
+    <div class="bar" style="height: 60%;">60%</div>
+    <div class="bar" style="height: 90%;">90%</div>
+</div>
+
+<style>
+    .bar-chart {
+        display: flex;
+        gap: 10px;
+        height: 200px;
+        align-items: flex-end;
+    }
+
+    .bar {
+        width: 50px;
+        background: #4caf50;
+        text-align: center;
+        color: white;
+        padding: 5px;
+        transition: 0.5s;
+    }
+
+    .bar:hover {
+        background: #2e7d32;
+    }
+</style>
